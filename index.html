@@ -1,0 +1,52 @@
+
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vraag 1</title>
+  <style>
+    body{font-family:system-ui,Segoe UI,Roboto,Arial; margin:24px; max-width:800px}
+    input{padding:10px; font-size:16px; width:220px}
+    button{padding:10px 14px; font-size:16px; margin-left:8px; cursor:pointer}
+    #f{margin-top:12px; font-weight:600}
+  </style>
+</head>
+<body>
+  <h1>Vraag 1</h1>
+
+  <p>Groepeer de Waalse, Vlaamse en Dialect woorden en zet ze per groep alfabetisch:</p>
+  <ol>
+    <li>Etagere</li>
+    <li>Goesting</li>
+    <li>Placard</li>
+    <li>Stoefer</li>
+    <li>Cellier</li>
+    <li>Plezant</li>
+    <li>Fourneau</li>
+    <li>Wulder</li>
+    <li>Tartelette</li>
+  </ol>
+
+  <p>Wat is de eerste letter van het woord van iedere groep? Zet deze achter elkaar:</p>
+
+  <input id="a" placeholder="Bijv. CGF" autocomplete="off">
+  <button type="button" onclick="check()">Controleer</button>
+  <p id="f"></p>
+
+  <script>
+    function check(){
+      const v = document.getElementById('a').value
+        .toLowerCase()
+        .replace(/[^a-z]/g, "");
+
+      if (v === "cgf") {
+        document.body.innerHTML = "<h2>Goed! 🎉</h2><p>Hier komt straks QR 2.</p>";
+      } else {
+        document.getElementById('f').textContent = "Nog niet goed, probeer opnieuw.";
+      }
+    }
+  </script>
+</body>
+</html>
+``
