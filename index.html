@@ -4,50 +4,110 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vraag 1</title>
+
   <style>
-    body{font-family:system-ui,Segoe UI,Roboto,Arial; margin:24px; max-width:800px}
-    input{padding:10px; font-size:16px; width:220px}
-    button{padding:10px 14px; font-size:16px; margin-left:8px; cursor:pointer}
-    #f{margin-top:12px; font-weight:600}
+    body {
+      font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif;
+      margin: 24px;
+      max-width: 800px;
+      background: #f7f9fc;
+      color: #222;
+    }
+
+    h1 {
+      color: #1a2a4a;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+      width: 240px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      padding: 10px 14px;
+      font-size: 16px;
+      margin-left: 8px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      background: #0078d4;
+      color: white;
+    }
+
+    button:hover {
+      background: #005ea2;
+    }
+
+    #f {
+      margin-top: 12px;
+      font-weight: 600;
+      color: #b00020;
+    }
+
+    .card {
+      background: white;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    }
+
+    ol {
+      margin-top: 16px;
+    }
   </style>
 </head>
+
 <body>
-  <h1>Vraag 1</h1>
 
-  <p>Hieronder staan 9 woorden. 3 Waals/Franse. 3 Vlaams/Nederlandse. 3 zijn dialect. Selecteer de 3 Waals/Franse, neem daarvan de eerste letter en zet ze in alfabetsiche volgorde:</p>
-  <ol>
-    <li>Etagere</li>
-    <li>Goesting</li>
-    <li>Riant</li>
-    <li>Stoefer</li>
-    <li>Cellier</li>
-    <li>Plezant</li>
-    <li>Fourneau</li>
-    <li>Wulder</li>
-    <li>Tartelette</li>
-  </ol>
+  <div class="card">
+    <h1>Vraag 1</h1>
 
-  <p>Wat is de eerste letter van het woord van iedere groep? Zet deze achter elkaar:</p>
+    <p>
+      Hieronder staan 9 woorden.<br>
+      3 zijn Waals/Frans.<br>
+      3 zijn Vlaams/Nederlands.<br>
+      3 zijn dialect.
+    </p>
 
-  <input id="a" placeholder="Bijv. CGF" autocomplete="off">
-  <button type="button" onclick="check()">Controleer</button>
-  <p id="f"></p>
+    <p>
+      Selecteer de <strong>3 Waals/Franse woorden</strong>,
+      neem daarvan de eerste letter en zet ze in <strong>alfabetische volgorde</strong>.
+    </p>
+
+    <ol>
+      <li>Etagere</li>
+      <li>Goesting</li>
+      <li>Riant</li>
+      <li>Stoefer</li>
+      <li>Cellier</li>
+      <li>Plezant</li>
+      <li>Fourneau</li>
+      <li>Wulder</li>
+      <li>Tartelette</li>
+    </ol>
+
+    <input id="a" placeholder="Bijv. CFT" autocomplete="off">
+    <button onclick="check()">Controleer</button>
+
+    <p id="f"></p>
+  </div>
 
   <script>
-    function check(){
+    function check() {
       const v = document.getElementById('a').value
         .toLowerCase()
         .replace(/[^a-z]/g, "");
 
-  
-if (v === "cer") {
+      if (v === "cer") {
         window.location.href = "vraag2.html";
       } else {
         document.getElementById('f').textContent = "Nog niet goed, probeer opnieuw.";
       }
     }
   </script>
+
 </body>
 </html>
-
-
