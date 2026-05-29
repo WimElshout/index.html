@@ -18,7 +18,117 @@
     }
 
     input {
+      padding: 10px;<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vraag 2</title>
+
+  <style>
+    body {
+      font-family: system-ui, Segoe UI, Roboto, Arial, sans-serif;
+      margin: 24px;
+      max-width: 900px;
+      background: #f7f9fc;
+      color: #222;
+    }
+
+    h1 {
+      color: #1a2a4a;
+    }
+
+    input {
       padding: 10px;
+      font-size: 16px;
+      width: 260px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      padding: 10px 14px;
+      font-size: 16px;
+      margin-left: 8px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      background: #0078d4;
+      color: white;
+    }
+
+    button:hover {
+      background: #005ea2;
+    }
+
+    #f {
+      margin-top: 12px;
+      font-weight: 600;
+      color: #b00020;
+    }
+
+    .card {
+      background: white;
+      padding: 24px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    }
+
+    .media {
+      margin: 20px 0;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>Vraag 2</h1>
+
+    <p>
+      Een West-Vlaams liedje van de band <strong>'t Hof van Commerce</strong>.
+      Wat moet er gereed staan om op pad te gaan?
+    </p>
+
+    <!-- ✅ EXTRA SPATIE / WITREGEL -->
+    <br>
+
+    <p>
+      <em>(Het eerste woord dat je hoort nadat de zanger voor de eerste keer
+      "na na na naah, na na na nah" heeft gezongen)</em>
+    </p>
+
+    <div class="media">
+      <img src="Commence2.jpeg" alt="Vraag 2 afbeelding"
+        style="width:100%; max-width:600px; border-radius:12px;">
+    </div>
+
+    <input id="a" placeholder="Jouw antwoord" autocomplete="off">
+    <button onclick="check()">Controleer</button>
+
+    <p id="f"></p>
+  </div>
+
+  <script>
+    function check() {
+      const v = document.getElementById('a').value
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-zà-ÿ]/g, "");
+
+      const goedeAntwoorden = ["bus", "busje", "auto", "voertuig"];
+
+      if (goedeAntwoorden.includes(v)) {
+        window.location.href = "vraag3.html";
+      } else {
+        document.getElementById('f').textContent = "Nog niet goed, probeer opnieuw.";
+      }
+    }
+  </script>
+
+</body>
+</html>
       font-size: 16px;
       width: 260px;
       border: 1px solid #ccc;
