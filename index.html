@@ -39,8 +39,9 @@
         .toLowerCase()
         .replace(/[^a-z]/g, "");
 
-      if (v === "cer") {
-        document.body.innerHTML = "<h2>Goed! 🎉</h2><p>Hier komt straks QR 2.</p>";
+  
+if (v === "cer") {
+        window.location.href = "vraag2.html";
       } else {
         document.getElementById('f').textContent = "Nog niet goed, probeer opnieuw.";
       }
@@ -48,4 +49,5 @@
   </script>
 </body>
 </html>
+
 
