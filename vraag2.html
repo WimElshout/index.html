@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="nl">
 <head>
@@ -54,15 +53,11 @@
       box-shadow: 0 4px 18px rgba(0,0,0,0.08);
     }
 
-    .spotify {
+    .media {
       margin: 20px 0;
+      text-align: center;
     }
 
-    .goed {
-      color: #0a7a2f;
-      font-weight: 700;
-      margin-top: 14px;
-    }
   </style>
 </head>
 <body>
@@ -73,16 +68,18 @@
       Een West-Vlaams liedje van de band <strong>'t Hof van Commerce</strong>.
       Wat moet er gereed staan om op pad te gaan?
       <br><br>
-     (Het <strong>eerste woord</strong> dat je hoort nadat de zanger voor de
-      eerste keer <em>"na na na naah, na na na nah"</em> heeft gezongen)
+      <em>(Het eerste woord dat je hoort nadat de zanger voor de eerste keer
+      "na na na naah, na na na nah" heeft gezongen)</em>
     </p>
 
-    <div class="spotify">
-   <img src="Commence2.jpeg" alt="Vraag 2 afbeelding" style="width:100%; border-radius:12px;">
+    <div class="media">
+      <img src="Commence2.jpeg" alt="Vraag 2 afbeelding"
+        style="width:100%; max-width:600px; border-radius:12px;">
     </div>
 
     <input id="a" placeholder="Jouw antwoord" autocomplete="off">
     <button type="button" onclick="check()">Controleer</button>
+
     <p id="f"></p>
   </div>
 
@@ -96,15 +93,7 @@
       const goedeAntwoorden = ["bus", "busje", "auto", "voertuig"];
 
       if (goedeAntwoorden.includes(v)) {
-        document.body.innerHTML = `
-          <div style="font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif; margin:24px; max-width:800px;">
-            <div style="background:white; padding:24px; border-radius:14px; box-shadow:0 4px 18px rgba(0,0,0,0.08);">
-              <h2 style="color:#0a7a2f;">Goed! 🎉</h2>
-              <p>Vraag 2 is goed beantwoord.</p>
-              <p>Hier kun je straks vraag 3 of de volgende QR-opdracht neerzetten.</p>
-            </div>
-          </div>
-        `;
+        window.location.href = "vraag3.html";
       } else {
         document.getElementById('f').textContent = "Nog niet goed, probeer opnieuw.";
       }
