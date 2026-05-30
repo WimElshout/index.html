@@ -51,3 +51,76 @@
       background: white;
       padding: 24px;
       border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    }
+
+    .media {
+      margin: 20px 0;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>Vraag 2</h1>
+
+    <p>
+      Een West-Vlaams liedje van de band <strong>'t Hof van Commerce</strong>.
+    </p>
+
+    <br>
+
+    <p>
+      <strong>Scan met een andere telefoon de code via Spotify om het nummer te openen.</strong>
+    </p>
+
+    <br>
+
+    <p>
+      Wie hebben er, <strong>in het Nederlands</strong>, een monokini aan?
+    </p>
+
+    <div class="media">
+      <img src="Commence2.jpeg" alt="Vraag 2 afbeelding"
+        style="width:100%; max-width:600px; border-radius:12px;">
+    </div>
+
+    <p>
+      <em>Een hoop.....</em>
+    </p>
+
+    <input id="a" placeholder="Jouw antwoord" autocomplete="off">
+    <button onclick="check()">Controleer</button>
+
+    <p id="f"></p>
+  </div>
+
+  <script>
+    function check() {
+      const v = document.getElementById('a').value
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-zà-ÿ]/g, "");
+
+      // ✅ jouw antwoorden behouden, maar lowercase gemaakt
+      const goedeAntwoorden = [
+        "vrouwen",
+        "vrouwtjes",
+        "dames",
+        "meisjes",
+        "meiden",
+        "wijven"
+      ];
+
+      if (goedeAntwoorden.includes(v)) {
+        window.location.href = "vraag3.html";
+      } else {
+        document.getElementById('f').textContent = "Nog niet goed, probeer opnieuw.";
+      }
+    }
+  </script>
+
+</body>
+</html>
